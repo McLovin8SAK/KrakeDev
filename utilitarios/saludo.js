@@ -8,6 +8,8 @@ saludar=function(){
 
     mostrarTexto("lblResultado",mensajeBienvenida);
     mostrarImagen("imgSaludo","./imagenes/rafaGorgori.gif");
+    //para limpiar la caja
+    mostrarTextoEnCaja("txtNombre"," ");
 }
 
 mostrarImagen=function(idComponente,rutaImagen){
@@ -20,6 +22,13 @@ mostrarTexto=function(idComponente,mensaje){
     let componente;
     componente=document.getElementById(idComponente);
     componente.innerText=mensaje;
+}
+
+//para limpiar la caja de texto
+mostrarTextoEnCaja=function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.value=mensaje;   
 }
 
 recuperarTexto=function(idComponente){
