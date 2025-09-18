@@ -7,6 +7,13 @@ saludar=function(){
     let mensajeBienvenida="Bienvenido "+nombre+" "+apellido;
 
     mostrarTexto("lblResultado",mensajeBienvenida);
+    mostrarImagen("imgSaludo","./imagenes/rafaGorgori.gif");
+}
+
+mostrarImagen=function(idComponente,rutaImagen){
+    let imgComponente;
+    imgComponente=document.getElementById(idComponente);
+    imgComponente.src=rutaImagen;
 }
 
 mostrarTexto=function(idComponente,mensaje){
