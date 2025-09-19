@@ -24,23 +24,11 @@ calcularValorTotal = function () {
     valorIVA=calcularIva(valorSinIva);
 
     mostrarTexto("lblValorIVA",valorIVA.toFixed(2));
-        /*
-            Caso de prueba: 
-                - cantidad: 10 
-                - precioProducto: 5.4  
-                - descuento: 10
 
-                    - valorSubtotal: 54
-                    - descuento:5.4
-                    - valorSubtotal 
-                    - descuento: 48.6
-
-                IVA esperado: 5.832
-
-            Si el caso de prueba es exitoso, hacer un commit
-        */
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
+    valorTotal=calcularTotal(valorSubtotal,valorDescuento,valorIVA)
     //11. Mostrar el resultado en el componente lblTotal
+    mostrarTexto("lblTotal",valorTotal.toFixed(2));
     /*
         Caso de prueba: 
             - cantidad: 10
