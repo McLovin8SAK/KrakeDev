@@ -151,3 +151,28 @@ obtenerTipoVehiculo=function(placa){
         return null;
     }
 }
+
+obtenerDiaPicoYPlaca=function(placa){
+    let ultimoDigito=placa.length -1;
+    let ultimoNumero=placa.charAt(ultimoDigito);
+    if(ultimoNumero==1 || ultimoNumero==2){
+        return "Pico y placa: Lunes";
+    }
+    if(ultimoNumero==3 || ultimoNumero==4){
+        return "Pico y placa: Martes";
+    }
+    if(ultimoNumero==5 || ultimoNumero==6){
+        return "Pico y placa: Miercoles";
+    }
+    if(ultimoNumero==7 || ultimoNumero==8){
+        return "Pico y placa: Jueves";
+    }
+    if(ultimoNumero==9 || ultimoNumero==0){
+        return "Pico y placa: Viernes";
+    }else{
+        return null;
+    }
+}
+
+
+

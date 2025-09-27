@@ -20,6 +20,8 @@ validarPlaca = function () {
         }else{
             mostrarTexto("lblVehiculo", "Vehiculo incorrecto");
         }
+        let diaPicoYPlaca = obtenerDiaPicoYPlaca(valorPlaca);
+        mostrarTexto("lblPicoYPlaca", diaPicoYPlaca);
     } else {
         mostrarTexto("lblRespuesta", "ESTRUCTURA INCORRECTA");
         mostrarTexto("lblErroresValidacion", "Los errores son: " + erroresEstructura);
