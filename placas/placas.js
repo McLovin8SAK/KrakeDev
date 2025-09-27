@@ -29,3 +29,13 @@ validarPlaca = function () {
         mostrarTexto("lblVehiculo", "");
     }
 }
+
+limpiar=function(){
+    mostrarTextoEnCaja("txtCajaPlaca", "");
+    mostrarTexto("lblRespuesta", "");
+    mostrarTexto("lblErroresValidacion", "");
+    mostrarTexto("lblProvincia", "");
+    mostrarTexto("lblVehiculo", "");
+    mostrarTexto("lblPicoYPlaca", "");
+    
+}
