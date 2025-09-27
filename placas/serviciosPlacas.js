@@ -130,3 +130,24 @@ obtenerProvincia=function(placa){
         return null;
     }
 }
+
+obtenerTipoVehiculo=function(placa){
+    let segundoCaracter = placa.charAt(1);
+    if(segundoCaracter=="A" || segundoCaracter=="Z"){
+        return "Es vehiculo comercial";
+    }
+    if(segundoCaracter=="E"){
+        return "Es vehiculo gubernamental";
+    }
+    if(segundoCaracter=="X"){
+        return "Es vehiculo de uso oficial";
+    }
+    if(segundoCaracter=="S"){
+        return "Es vehiculo de gobierno provincial";
+    }
+    if(segundoCaracter=="M"){
+        return "Es vehiculo municipal";
+    }else{
+        return null;
+    }
+}
