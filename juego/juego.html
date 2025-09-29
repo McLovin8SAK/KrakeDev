@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="serviciosJuego.js"></script>
+        <script src="juego.js"></script>
+        <script src="utilitarios.js"></script>
+    </head>
+    <body>
+        <h2>JUEGA PIEDRA PAPEL O TIJERA</h2>
+        <h2></h2>
+        <input type="image" src="imagenes/piedra.png" onclick="jugar('piedra')" width="10%"/>
+        <input type="image" src="imagenes/papel.png" onclick="jugar('papel')" width="10%"/>
+        <input type="image" src="imagenes/tijera.png" onclick="jugar('tijera')" width="10%"/>
+        <h2></h2>
+        <h2>Elección del computador</h2>
+        <img id="imgJuego" src="" width="10%"/>
+        <h2></h2>
+        <h2 id="lblResultado"></h2>
+        <h2></h2>
+        <h2>Usuario</h2>
+        <h2 id="lblPuntajeUsuario">0</h2>
+        <h2>Computador</h2>
+        <h2 id="lblPuntajeComputador">0</h2>
+        <input type="button" value="NUEVA PARTIDA" onclick="limpiar();"/>
+    
+    </body>
+</html>
