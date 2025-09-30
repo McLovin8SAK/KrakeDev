@@ -37,7 +37,7 @@ guardarPalabra = function () {
 }
 
 mostrarLetra = function (letra, posicion) {
-        mostrarTexto('div${posicion}', letra);
+        mostrarTexto(`div${posicion}`, letra);
 }
 
 validar=function(letra){
@@ -47,5 +47,14 @@ validar=function(letra){
             mostrarLetra(letra,posicion)
             letrasEncontradas++;
         }
+    }
+}
+
+ingresarLetra=function(){
+    let letraIngresada=recuperarTexto("txtLetra");
+    if(letraIngresada.length==1 && esMayuscula(letraIngresada)){
+        validar(letraIngresada);
+    }else{
+        alert("SOLO SE ACEPTAN MAYUSCULAS");    
     }
 }
