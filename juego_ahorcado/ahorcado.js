@@ -65,10 +65,10 @@ ingresarLetra = function () {
     if (letraIngresada.length == 1 && esMayuscula(letraIngresada)) {
         validar(letraIngresada);
         if (coincidencias == 5) {
-            alert("HA GANADO!");
+            mostrarImagen("ahorcadoImagen", "ganador.gif");
         }
         if (intentos == 10) {
-            alert("HA PERDIDO");
+            mostrarImagen("ahorcadoImagen", "gameOver.gif");
         }
     } else {
         alert("SOLO SE ACEPTAN MAYUSCULAS");
