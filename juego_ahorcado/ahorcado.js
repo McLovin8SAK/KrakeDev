@@ -1,4 +1,7 @@
 let palabraSecreta;
+let intentos = 0;
+let coincidencias = 0;
+let errores = 0;
 
 esMayuscula = function (i) {
     let esMayuscula = i.charCodeAt(0);
@@ -37,24 +40,36 @@ guardarPalabra = function () {
 }
 
 mostrarLetra = function (letra, posicion) {
-        mostrarTexto(`div${posicion}`, letra);
+    mostrarTexto(`div${posicion}`, letra);
 }
 
-validar=function(letra){
-    let letrasEncontradas=0;
-    for(let posicion=0;posicion<palabraSecreta.length;posicion++){
-        if(palabraSecreta.charAt(posicion)==letra){
-            mostrarLetra(letra,posicion)
+validar = function (letra) {
+    let letrasEncontradas = 0;
+    for (let posicion = 0; posicion < palabraSecreta.length; posicion++) {
+        if (palabraSecreta.charAt(posicion) == letra) {
+            mostrarLetra(letra, posicion)
             letrasEncontradas++;
         }
     }
+    coincidencias += letrasEncontradas;
+    if (letrasEncontradas==0) {
+        alert("LA LETRA NO ES PARTE DE LA PALABRA");
+        errores++;
+    }
 }
 
-ingresarLetra=function(){
-    let letraIngresada=recuperarTexto("txtLetra");
-    if(letraIngresada.length==1 && esMayuscula(letraIngresada)){
+ingresarLetra = function () {
+    intentos++;
+    let letraIngresada = recuperarTexto("txtLetra");
+    if (letraIngresada.length == 1 && esMayuscula(letraIngresada)) {
         validar(letraIngresada);
-    }else{
-        alert("SOLO SE ACEPTAN MAYUSCULAS");    
+        if (coincidencias == 5) {
+            alert("HA GANADO!");
+        }
+        if (intentos == 10) {
+            alert("HA PERDIDO");
+        }
+    } else {
+        alert("SOLO SE ACEPTAN MAYUSCULAS");
     }
 }
