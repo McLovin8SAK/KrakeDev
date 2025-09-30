@@ -25,7 +25,7 @@ guardarPalabra = function () {
         }
         if (todasMayusculas == true) {
             console.log(palabraIngresada);
-            palabraSecreta=palabraIngresada;
+            palabraSecreta = palabraIngresada;
         } else {
             alert("Debe ingresar una palabra completamente en mayusculas");
             existeError = true;
@@ -34,4 +34,8 @@ guardarPalabra = function () {
         alert("Debe ingresar una palabra de 5 letras");
         existeError = true
     }
+}
+
+mostrarLetra = function (letra, posicion) {
+        mostrarTexto('div${posicion}', letra);
 }
