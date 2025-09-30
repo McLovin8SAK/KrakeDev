@@ -39,3 +39,13 @@ guardarPalabra = function () {
 mostrarLetra = function (letra, posicion) {
         mostrarTexto('div${posicion}', letra);
 }
+
+validar=function(letra){
+    let letrasEncontradas=0;
+    for(let posicion=0;posicion<palabraSecreta.length;posicion++){
+        if(palabraSecreta.charAt(posicion)==letra){
+            mostrarLetra(letra,posicion)
+            letrasEncontradas++;
+        }
+    }
+}
