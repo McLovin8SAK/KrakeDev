@@ -4,12 +4,19 @@ let empleados = [
     { cedula: "1740418522", nombre: "Alan", apellido: "Brito", sueldo: 750.0 }
 ]
 
+let esNuevo = false;
+
 mostrarOpcionEmpleado = function () {
     mostrarComponente("divEmpleado");
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
     mostrarEmpleados();
 
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
 
 mostrarOpcionRol = function () {
@@ -26,12 +33,21 @@ mostrarOpcionResumen = function () {
 
 mostrarEmpleados = function () {
     let cmpTabla = document.getElementById("tablaEmpleados");
-    let empleadosTabla = "<table><tr>" + "<th>CEDULA</th>" + "<th>NOMBRE</th>" + "<th>APELLIDO</th>" + "<th>SUELDO</th></tr>";   
+    let empleadosTabla = "<table><tr>" + "<th>CEDULA</th>" + "<th>NOMBRE</th>" + "<th>APELLIDO</th>" + "<th>SUELDO</th></tr>";
     let elementoEmpleado;
     for (let i = 0; i < empleados.length; i++) {
         elementoEmpleado = empleados[i];
         empleadosTabla += "<tr><td>" + elementoEmpleado.cedula + "</td>" + "<td>" + elementoEmpleado.nombre + "</td>" + "<td>" + elementoEmpleado.apellido + "</td>" + "<td>" + elementoEmpleado.sueldo + "</td></tr>";
     }
     empleadosTabla += "</table>"
-    cmpTabla.innerHTML=empleadosTabla
+    cmpTabla.innerHTML = empleadosTabla
+}
+
+ejecutarNuevo = function () {
+    habilitarComponente("txtCedula");
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
+    esNuevo = true;
 }
