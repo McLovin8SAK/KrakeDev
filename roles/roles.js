@@ -162,21 +162,21 @@ guardar = function () {
         empleado.nombre = valorNombre;
         empleado.apellido = valorApellido;
         empleado.sueldo = valorSueldo;
-        if(esNuevo==true){
+        if (esNuevo == true) {
             let nuevoEmpleado = agregarEmpleado(empleado);
-            if(nuevoEmpleado){
-            alert("EMPLEADO GUARDADO CORRECTAMENTE");
-            mostrarEmpleados();
-            deshabilitarCajas();
-            esNuevo = false;
-            }else{
+            if (nuevoEmpleado) {
+                alert("EMPLEADO GUARDADO CORRECTAMENTE");
+                mostrarEmpleados();
+                deshabilitarCajas();
+                esNuevo = false;
+            } else {
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA " + valorCedula);
             }
-        }else if (esNuevo==false){
-            let empleadoModificado=buscarEmpleado(empleado.cedula);
-            empleadoModificado.nombre=valorNombre;
-            empleadoModificado.apellido=valorApellido;
-            empleadoModificado.sueldo=valorSueldo;
+        } else if (esNuevo == false) {
+            let empleadoModificado = buscarEmpleado(empleado.cedula);
+            empleadoModificado.nombre = valorNombre;
+            empleadoModificado.apellido = valorApellido;
+            empleadoModificado.sueldo = valorSueldo;
 
             alert("EMPLEADO MODIFICADO EXITOSAMENTE");
             mostrarEmpleados();
@@ -213,3 +213,13 @@ ejecutarBusqueda = function () {
     }
 }
 
+limpiar = function () { 
+    mostrarTextoEnCaja("txtCedula", "");
+    mostrarTextoEnCaja("txtNombre", "");
+    mostrarTextoEnCaja("txtApellido", "");
+    mostrarTextoEnCaja("txtSueldo", "");
+    esNuevo=false;
+    deshabilitarCajas();
+
+
+}
