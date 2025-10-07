@@ -136,7 +136,7 @@ guardar = function () {
     }
 
     //validacion para sueldo
-    if (isNaN(valorSueldo) || valorSueldo=="") {
+    if (isNaN(valorSueldo) || valorSueldo == "") {
         sinErrores = false;
         errores += "*CAMPO OBLIGATORIO";
     }
@@ -170,10 +170,16 @@ guardar = function () {
         empleado.apellido = valorApellido;
         empleado.sueldo = valorSueldo;
         let nuevoEmpleado = agregarEmpleado(empleado);
-        if(nuevoEmpleado){
+        if (nuevoEmpleado) {
             alert("EMPLEADO GUARDADO CORRECTAMENTE");
             mostrarEmpleados();
-        }else{
+            deshabilitarComponente("txtCedula");
+            deshabilitarComponente("txtNombre");
+            deshabilitarComponente("txtApellido");
+            deshabilitarComponente("txtSueldo");
+            deshabilitarComponente("btnGuardar");
+
+        } else {
             alert("YA EXISTE UN EMPLEADO CON LA CEDULA " + valorCedula);
         }
     }
