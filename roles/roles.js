@@ -12,11 +12,7 @@ mostrarOpcionEmpleado = function () {
     ocultarComponente("divResumen");
     mostrarEmpleados();
 
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-    deshabilitarComponente("btnGuardar");
+    deshabilitarCajas();
 }
 
 mostrarOpcionRol = function () {
@@ -149,7 +145,7 @@ guardar = function () {
         mostrarTexto("lblErrorSueldo", errores);
         errores = "";
     }
-    //validar campo obligatorio
+    //validacion para campo obligatorio
     if (valorCedula == "") {
         sinErrores = false;
         mostrarTexto("lblErrorCedula", "*CAMPO OBLIGATORIO");
@@ -173,11 +169,7 @@ guardar = function () {
         if (nuevoEmpleado) {
             alert("EMPLEADO GUARDADO CORRECTAMENTE");
             mostrarEmpleados();
-            deshabilitarComponente("txtCedula");
-            deshabilitarComponente("txtNombre");
-            deshabilitarComponente("txtApellido");
-            deshabilitarComponente("txtSueldo");
-            deshabilitarComponente("btnGuardar");
+            deshabilitarCajas();
 
         } else {
             alert("YA EXISTE UN EMPLEADO CON LA CEDULA " + valorCedula);
@@ -185,3 +177,10 @@ guardar = function () {
     }
 }
 
+deshabilitarCajas=function(){
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
+}
