@@ -185,24 +185,3 @@ guardar = function () {
     }
 }
 
-
-
-crearCliente = function () { //esta es la que va a ser llamada desde el html
-    let valorCedula = recuperarTexto("txtCedula");
-    let valorNombre = recuperarTexto("txtNombre");
-    let valorEdad = recuperarInt("txtEdad");
-    // ahora, con estos valores debo armar mi objeto
-    let nuevoCliente = {};
-    nuevoCliente.cedula = valorCedula;
-    nuevoCliente.nombre = valorNombre;
-    nuevoCliente.edad = valorEdad;
-    //ahora si llamo a agregarCliente pasandole el objeto completo
-    agregarCliente(nuevoCliente);
-}
-modificarCliente = function (cliente) { //va a buscar en el arreglo al cliente
-    let clienteEncontrado = buscarCliente(cliente.cedula);
-    if (clienteEncontrado != null) { // como si le encontro, ahora voy a modificar
-        clienteEncontrado.nombre = cliente.nombre; // al clienteEncontrado le cambio los datos (nombre) que es el parametro ingresado de la funcion
-        clienteEncontrado.edad = cliente.edad;
-    }
-}
