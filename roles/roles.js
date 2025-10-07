@@ -213,13 +213,24 @@ ejecutarBusqueda = function () {
     }
 }
 
-limpiar = function () { 
+limpiar = function () {
     mostrarTextoEnCaja("txtCedula", "");
     mostrarTextoEnCaja("txtNombre", "");
     mostrarTextoEnCaja("txtApellido", "");
     mostrarTextoEnCaja("txtSueldo", "");
-    esNuevo=false;
+    esNuevo = false;
     deshabilitarCajas();
-
-
 }
+
+buscarPorRol = function () {
+    let cedulaEnRol = recuperarTexto("txtBusquedaCedulaRol");
+    let empleadoRol = buscarEmpleado(cedulaEnRol);
+    if (empleadoRol != null) {
+        mostrarTexto("infoCedula", empleadoRol.cedula);
+        mostrarTexto("infoNombre", empleadoRol.nombre + " " + empleadoRol.apellido);
+        mostrarTexto("infoSueldo", empleadoRol.sueldo);
+    } else {
+        alert("EL EMPLEADO NO EXISTE");
+    }
+}
+
