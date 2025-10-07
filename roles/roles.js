@@ -234,3 +234,26 @@ buscarPorRol = function () {
     }
 }
 
+calcularAporteEmpleado = function (sueldo) {
+    let aporteDelEmpleado = sueldo * 9.45 / 100;
+    return aporteDelEmpleado;
+}
+
+calcularValorAPagar = function (sueldo, iess, descuento) {
+    let valorCalculado = sueldo - (iess + descuento);
+    return valorCalculado;
+}
+
+calcularRol = function () {
+    let sueldoRol = recuperarFloatDiv("infoSueldo");
+    let descuentosRol = recuperarFloat("txtDescuentos");
+    if(descuentosRol>=0 && descuentosRol<=sueldoRol){
+        let aporteRol = calcularAporteEmpleado(sueldoRol);
+        mostrarTexto("infoIESS", aporteRol.toFixed(2));
+
+        let totalAPagar=calcularValorAPagar(sueldoRol, aporteRol, descuentosRol);
+        mostrarTexto("infoPago", totalAPagar.toFixed(2));
+    }else{
+        alert("El descuento debe ser mayor o igual a 0 y menor o igual al sueldo");
+    }
+}
