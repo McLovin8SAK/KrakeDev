@@ -332,15 +332,18 @@ mostrarRoles = function () {
 }
 
 mostrarTotales = function () {
-    let totalEmpleado=0;
-    let totalEmpleador=0;
-    let totalAPagar=0;
-    for(let i=0;i<roles.length; i++){
-        totalEmpleado+=roles[i].aporteEmpleado;
-        totalEmpleador+=roles[i].aporteEmpleador;
-        totalAPagar+=roles[i].valorAPagar;
+    let totalEmpleado = 0;
+    let totalEmpleador = 0;
+    let totalAPagar = 0;
+    for (let i = 0; i < roles.length; i++) {
+        totalEmpleado += roles[i].aporteEmpleado;
+        totalEmpleador += roles[i].aporteEmpleador;
+        totalAPagar += roles[i].valorAPagar;
     }
     mostrarTexto("infoTotalPago", totalAPagar.toFixed(2));
     mostrarTexto("infoAporteEmpresa", totalEmpleador.toFixed(2));
     mostrarTexto("infoAporteEmpleado", totalEmpleado.toFixed(2));
+
+    let totalNomina = totalEmpleado + totalEmpleador + totalAPagar;
+    mostrarTexto("infoTotalNomina", totalNomina.toFixed(2));
 }
