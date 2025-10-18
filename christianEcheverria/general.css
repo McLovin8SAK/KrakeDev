@@ -1,0 +1,46 @@
+/* ===============================
+   todo.css — Estilos base para talleres
+   Estructura compatible con cuentas.html/cuentas.js
+   =============================== */
+
+/* Reset básico */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial; }
+
+/* Layout general */
+.principal { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; background: #0f172a; color: #e2e8f0; }
+.menu { background: #0b1220; border-right: 1px solid #1f2937; padding: 1rem; display: flex; flex-direction: column; gap: 1rem; }
+.contenido { padding: 1.2rem; border-left: 1px solid #1f2937; }
+
+/* Info del grupo */
+.contenedorInfoGrupo { margin-top: auto; padding-top: 1rem; border-top: 1px dashed #1f2937; color: #94a3b8; font-size: .9rem; display: grid; gap: .25rem; }
+
+/* Bloques superiores/inferiores (para títulos y tablas) */
+.superior, .inferior { background: #111827; border: 1px solid #1f2937; border-radius: 14px; padding: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+.titulo { font-size: 1.2rem; font-weight: 700; margin-bottom: .6rem; }
+p { color: #cbd5e1; }
+
+/* Enunciado (verde): resumen del objetivo del taller */
+.enunciado { background: #064e3b; border: 1px solid #065f46; color: #d1fae5; padding: .8rem 1rem; border-radius: 10px; margin: .8rem 0 1rem 0; }
+.enunciado strong { color: #a7f3d0; }
+
+/* Filas de formulario */
+.contenedorTexto { display: grid; grid-template-columns: 160px 1fr; align-items: center; gap: .7rem; margin: .5rem 0; }
+.etiquetaTexto { color: #94a3b8; }
+.cajaTexto { width: 100%; }
+.caja { width: 100%; background: transparent; color: #e2e8f0; border: 1px solid #1f2937; padding: .6rem .8rem; border-radius: 10px; outline: none; }
+.caja::placeholder { color: #64748b; }
+
+/* Acciones (botones de cada taller) */
+.contenedorAcciones { display: flex; gap: .6rem; margin-top: .6rem; }
+.contenedorAcciones input[type="button"] { background: #3b82f6; color: #fff; border: 0; padding: .55rem .9rem; border-radius: 10px; cursor: pointer; }
+.contenedorAcciones input[type="button"]:active { transform: scale(.98); }
+
+/* Tablas de resultados */
+table { width: 100%; border-collapse: collapse; margin-top: .8rem; }
+th, td { border: 1px solid #1f2937; padding: .5rem .6rem; text-align: left; }
+th { background: #0b1220; color: #cbd5e1; }
+td { background: #0f172a; }
+
+/* Utilidad: ocultar/mostrar */
+.oculto { display: none; }

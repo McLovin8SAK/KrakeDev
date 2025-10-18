@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Vinculamos la hoja de estilos general de los talleres -->
+  <link href="general.css" rel="stylesheet" />
+  <!-- Cargamos primero el JS del taller y luego utilitarios -->
+  <script src="ejerciciosEli2.js"></script>
+  <script src="utilitariosEli.js"></script>
+</head>
+<!-- onload llama a cargar() para configurar la vista inicial -->
+<body onload="cargar();">
+  <div class="principal">
+    <!-- === Lateral izquierdo: Menú de navegación === -->
+    <div class="menu">
+      <div class="contenedorBotones">
+        <!-- Botones que muestran/ocultan secciones usando utilitarios.js -->
+        <input type="button" value="INICIO" class="boton" onclick="mostrarInicio();" />
+        <input type="button" value="EJERCICIO" class="boton" onclick="mostrarEjercicio();" />
+        <input type="button" value="RESULTADOS" class="boton" onclick="mostrarResultados();" />
+      </div>
+      <div class="contenedorInfoGrupo">
+        <div>INTEGRANTE 1</div>
+        <div>INTEGRANTE 2</div>
+        <div>INTEGRANTE 3</div>
+      </div>
+    </div>
+
+    <!-- === Área derecha: Contenido dinámico por sección === -->
+    <!-- Sección INICIO: título y enunciado (en verde) -->
+    <div class="contenido" id="divInicio">
+      <div class="superior">
+        <div class="titulo">Taller 1 — Ficha de Evaluación de Notas</div>
+        <!-- Enunciado: explica el objetivo del taller -->
+        <div class="enunciado"><strong>Enunciado:</strong> Ingrese 5 notas (0–10). Se calculará el promedio, la nota mayor, la nota menor y se determinará si el estudiante APRUEBA (≥7) o REPRUEBA.</div>
+        <p>Use el menú de la izquierda para navegar entre Inicio, Ejercicio y Resultados.</p>
+      </div>
+    </div>
+
+    <!-- Sección EJERCICIO: inputs y botones -->
+    
+<div class="contenido oculto" id="divEjercicio">
+  <div class="superior">
+    <div class="titulo">Ingreso de Notas</div>
+    <!-- Comentario: Cada fila contiene etiqueta e input numérico -->
+    <div class="contenedorTexto"><div class="etiquetaTexto">Nota 1</div><div class="cajaTexto"><input type="number" class="caja" id="n1" min="0" max="10" step="0.01" placeholder="Ej: 8.5" /></div></div>
+    <div class="contenedorTexto"><div class="etiquetaTexto">Nota 2</div><div class="cajaTexto"><input type="number" class="caja" id="n2" min="0" max="10" step="0.01" /></div></div>
+    <div class="contenedorTexto"><div class="etiquetaTexto">Nota 3</div><div class="cajaTexto"><input type="number" class="caja" id="n3" min="0" max="10" step="0.01" /></div></div>
+    <div class="contenedorTexto"><div class="etiquetaTexto">Nota 4</div><div class="cajaTexto"><input type="number" class="caja" id="n4" min="0" max="10" step="0.01" /></div></div>
+    <div class="contenedorTexto"><div class="etiquetaTexto">Nota 5</div><div class="cajaTexto"><input type="number" class="caja" id="n5" min="0" max="10" step="0.01" /></div></div>
+
+    <!-- Acciones: Evaluar y Limpiar -->
+    <div class="contenedorAcciones">
+      <input type="button" value="EVALUAR" onclick="evaluar();" />
+      <input type="button" value="LIMPIAR" onclick="limpiar();" />
+    </div>
+  </div>
+</div>
+
+
+    <!-- Sección RESULTADOS: tabla o datos generados -->
+    <div class="contenido oculto" id="divResultados">
+      <div class="inferior">
+        <div class="titulo">Resultados</div>
+        <div id="zonaResultados">Aquí se mostrarán los resultados.</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
